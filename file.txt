@@ -1,10 +1,1 @@
-<<<<<<< HEAD
-Your changes in the `main` branch.
-=======
-Changes dev
->>>>>>> feature-branch
-<<<<<<< HEAD
-This is the main branch
-=======
-This is a new feature from feature-branch
->>>>>>> dev
+this is from main branch
