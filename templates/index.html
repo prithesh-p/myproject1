@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader - YouTube & Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-download"></i>
+                <h1>Video Downloader</h1>
+            </div>
+            <p class="subtitle">Download videos from YouTube and Instagram</p>
+        </header>
+
+        <main>
+            <div class="download-section">
+                <div class="input-container">
+                    <input type="url" id="videoUrl" placeholder="Paste your YouTube or Instagram video URL here..." autocomplete="off">
+                    <button id="getInfoBtn" class="btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Get Info
+                    </button>
+                </div>
+
+                <div id="videoInfo" class="video-info hidden">
+                    <div class="video-preview">
+                        <img id="videoThumbnail" src="" alt="Video thumbnail">
+                        <div class="video-details">
+                            <h3 id="videoTitle"></h3>
+                            <p class="video-meta">
+                                <span id="videoUploader"></span> • 
+                                <span id="videoDuration"></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="download-options">
+                        <div class="quality-selector">
+                            <label for="quality">Quality:</label>
+                            <select id="quality">
+                                <option value="best">Best (1080p)</option>
+                                <option value="medium">Medium (720p)</option>
+                                <option value="low">Low (480p)</option>
+                            </select>
+                        </div>
+                        <button id="downloadBtn" class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Download Video
+                        </button>
+                    </div>
+                </div>
+
+                <div id="progressSection" class="progress-section hidden">
+                    <div class="progress-header">
+                        <h3>Download Progress</h3>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-details">
+                        <span id="downloadSpeed">Preparing...</span>
+                        <span id="downloadStatus">Starting download...</span>
+                    </div>
+                </div>
+
+                <div id="successSection" class="success-section hidden">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Download Complete!</h3>
+                    <p>Your video has been successfully downloaded.</p>
+                    <button id="downloadAnotherBtn" class="btn-secondary">
+                        <i class="fas fa-plus"></i>
+                        Download Another Video
+                    </button>
+                </div>
+
+                <div id="errorSection" class="error-section hidden">
+                    <div class="error-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Download Failed</h3>
+                    <p id="errorMessage"></p>
+                    <button id="tryAgainBtn" class="btn-secondary">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fab fa-youtube"></i>
+                        <h3>YouTube Support</h3>
+                        <p>Download videos from YouTube with multiple quality options</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fab fa-instagram"></i>
+                        <h3>Instagram Support</h3>
+                        <p>Download videos and reels from Instagram easily</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-hd-video"></i>
+                        <h3>Multiple Qualities</h3>
+                        <p>Choose from different video qualities to suit your needs</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Downloads</h3>
+                        <p>Optimized download process with real-time progress tracking</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <h3><i class="fas fa-exclamation-circle"></i> Important Notice</h3>
+                <p>
+                    This tool is for personal and educational use only. Please respect copyright laws and the terms of service of the platforms. 
+                    Only download content that you have permission to download or that is available under appropriate licenses.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
